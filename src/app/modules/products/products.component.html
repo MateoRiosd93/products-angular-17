@@ -1,6 +1,9 @@
-<section>
+<section class="min-h-[80%]">
     <h1>Aqui tienes los <strong class="text-purple-400">mejores</strong> productos</h1>
-    <ul *ngFor="let product of products">
-        <li>{{product.title}}</li>
-    </ul>
+    <span *ngIf="loading" class="font-normal text-purple-700 block text-center mt-44">Cargando ...</span>
+    <div *ngIf="!loading">
+        <ul *ngFor="let product of products">
+            <li>{{product.title}}</li>
+        </ul>
+    </div>
 </section>

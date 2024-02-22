@@ -15,12 +15,14 @@ import { CommonModule } from '@angular/common';
 export class ProductsComponent implements OnInit {
   products: Product[] = []
 
+  loading = true
+
   constructor(private platziService: PlatziService) { }
 
   ngOnInit(): void {
     this.platziService.getAllProducts().subscribe(response => {
       this.products = response
-      console.log(this.products)
+      this.loading = false
     })
   }
 
