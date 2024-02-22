@@ -1,9 +1,11 @@
-<article>
-    <img [src]="product.images[0]" alt="">
+<article class="flex flex-col gap-2 w-64 border border-gray-200 rounded-sm p-3 hover:border-gray-400 transition">
+    <img [src]="product.images[0]" alt="Product image" class="rounded-sm">
     <div>
-        <h3>{{product.title}}</h3>
-        <strong>{{product.price | currency}}</strong>
+        <h3 class="truncate font-semibold">{{product.title}}</h3>
+        <div class="flex gap-2">
+            <p class="font-mono underline">{{product.price | currency}}</p>
+            <span class="bg-purple-100 py-1 px-2 rounded-sm text-xs font-extralight">{{product.category.name}}</span>
+        </div>
     </div>
-    <p>{{product.description}}</p>
-    <span>{{product.category.name}}</span>
+    <p class="text-sm font-extralight text-pretty">{{product.description.slice(0, 120)}}...</p>
 </article>

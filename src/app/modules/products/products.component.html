@@ -1,4 +1,4 @@
-<section class="min-h-[80%]">
+<section class="w-ful min-h-[80%]">
     <h1>Aqui tienes los <strong class="text-purple-400">mejores</strong> productos</h1>
     <div *ngIf="loading" class="w-full flex gap-2 justify-center items-center mt-44 ">
         <div class="animate-spin">
@@ -6,9 +6,7 @@
         </div>
         <span class="font-normal text-purple-700 block text-center">Cargando...</span>
     </div>
-    <div *ngIf="!loading">
-        <ul *ngFor="let product of products">
-            <app-product [product]="product"></app-product>
-        </ul>
-    </div>
+    <ul *ngIf="!loading" class="w-full flex flex-wrap gap-4 justify-center mt-8">
+        <app-product *ngFor="let product of products" [product]="product"></app-product>
+    </ul>
 </section>
