@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlatziService } from '../../services/platzi.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {}
+
+  goToProducts(){
+    this.router.navigate(["products"])
+  }
 }
