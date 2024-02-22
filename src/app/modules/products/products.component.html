@@ -1,6 +1,11 @@
 <section class="min-h-[80%]">
     <h1>Aqui tienes los <strong class="text-purple-400">mejores</strong> productos</h1>
-    <span *ngIf="loading" class="font-normal text-purple-700 block text-center mt-44">Cargando ...</span>
+    <div *ngIf="loading" class="w-full flex gap-2 justify-center items-center mt-44 ">
+        <div class="animate-spin">
+            <app-loading class="text-purple-700"></app-loading>
+        </div>
+        <span class="font-normal text-purple-700 block text-center">Cargando...</span>
+    </div>
     <div *ngIf="!loading">
         <ul *ngFor="let product of products">
             <li>{{product.title}}</li>

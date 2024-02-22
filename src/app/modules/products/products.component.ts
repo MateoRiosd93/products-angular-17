@@ -3,11 +3,12 @@ import { PlatziService } from '../../services/platzi.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Product } from '../../model/product.model';
 import { CommonModule } from '@angular/common';
+import { LoadingComponent } from '../../components/icons/loading/loading.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, LoadingComponent],
   providers: [PlatziService],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
