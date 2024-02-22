@@ -1,0 +1,9 @@
+<article>
+    <img [src]="product.images[0]" alt="">
+    <div>
+        <h3>{{product.title}}</h3>
+        <strong>{{product.price | currency}}</strong>
+    </div>
+    <p>{{product.description}}</p>
+    <span>{{product.category.name}}</span>
+</article>
